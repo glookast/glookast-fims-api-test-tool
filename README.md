@@ -17,6 +17,7 @@ $ ./gradlew run
 ```
 
 On first usage a service needs to be configured:
+
 1. Go to Tools -> Services
 2. Click New
 3. Fill out the name
