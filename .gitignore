@@ -1,0 +1,5 @@
+/.gradle
+/.nb-gradle/
+/build/
+/application.properties
+/application_data.xml
