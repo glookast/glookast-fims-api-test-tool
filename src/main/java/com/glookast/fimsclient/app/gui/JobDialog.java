@@ -341,19 +341,19 @@ public class JobDialog extends ViewEditDialog<JobType>
 
             ExtensionAttributes extensionAttributes = myObject.getExtensionAttributes();
             if (extensionAttributes != null) {
-                String clipName = extensionAttributes.getOtherAttributes().get(new QName("ClipName"));
+                String clipName = extensionAttributes.getOtherAttributes().get(new QName("http://fims.api.glookast.com", "ClipName"));
                 if (clipName != null) {
                     myClipNameField.setText(clipName);
                 }
-                String tapeName = extensionAttributes.getOtherAttributes().get(new QName("TapeName"));
+                String tapeName = extensionAttributes.getOtherAttributes().get(new QName("http://fims.api.glookast.com", "TapeName"));
                 if (tapeName != null) {
                     myTapeNameField.setText(tapeName);
                 }
-                String interplaySubfolder = extensionAttributes.getOtherAttributes().get(new QName("InterplaySubfolder"));
+                String interplaySubfolder = extensionAttributes.getOtherAttributes().get(new QName("http://fims.api.glookast.com", "InterplaySubfolder"));
                 if (interplaySubfolder != null) {
                     myInterplaySubfolderField.setText(interplaySubfolder);
                 }
-                String timecodeSource = extensionAttributes.getOtherAttributes().get(new QName("TimecodeSource"));
+                String timecodeSource = extensionAttributes.getOtherAttributes().get(new QName("http://fims.api.glookast.com", "TimecodeSource"));
                 if (timecodeSource != null) {
                     myTimecodeSourceCombo.setSelectedItem(timecodeSource);
                 }
@@ -484,16 +484,16 @@ public class JobDialog extends ViewEditDialog<JobType>
 
         ExtensionAttributes extensionAttributes = new ExtensionAttributes();
         if (!myClipNameField.getText().isEmpty()) {
-            extensionAttributes.getOtherAttributes().put(new QName("ClipName"), myClipNameField.getText());
+            extensionAttributes.getOtherAttributes().put(new QName("http://fims.api.glookast.com", "ClipName"), myClipNameField.getText());
         }
         if (!myTapeNameField.getText().isEmpty()) {
-            extensionAttributes.getOtherAttributes().put(new QName("TapeName"), myTapeNameField.getText());
+            extensionAttributes.getOtherAttributes().put(new QName("http://fims.api.glookast.com", "TapeName"), myTapeNameField.getText());
         }
         if (!myInterplaySubfolderField.getText().isEmpty()) {
-            extensionAttributes.getOtherAttributes().put(new QName("InterplaySubfolder"), myInterplaySubfolderField.getText());
+            extensionAttributes.getOtherAttributes().put(new QName("http://fims.api.glookast.com", "InterplaySubfolder"), myInterplaySubfolderField.getText());
         }
         if (!((String) myTimecodeSourceCombo.getSelectedItem()).isEmpty()) {
-            extensionAttributes.getOtherAttributes().put(new QName("TimecodeSource"), (String) myTimecodeSourceCombo.getSelectedItem());
+            extensionAttributes.getOtherAttributes().put(new QName("http://fims.api.glookast.com", "TimecodeSource"), (String) myTimecodeSourceCombo.getSelectedItem());
         }
 
         myObject.setExtensionAttributes(extensionAttributes);
