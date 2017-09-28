@@ -419,22 +419,26 @@ public class JobDialog extends ViewEditDialog<JobType>
                 myStartJobCombo.setSelectedItem("Latest");
             }
 
-            switch (myObject.getPriority()) {
-                case LOW:
-                    myPriorityCombo.setSelectedItem("Low");
-                    break;
-                case MEDIUM:
-                    myPriorityCombo.setSelectedItem("Medium");
-                    break;
-                case HIGH:
-                    myPriorityCombo.setSelectedItem("High");
-                    break;
-                case URGENT:
-                    myPriorityCombo.setSelectedItem("Urgent");
-                    break;
-                case IMMEDIATE:
-                    myPriorityCombo.setSelectedItem("Immediate");
-                    break;
+            if (myObject.getPriority() != null)
+            {
+                switch (myObject.getPriority())
+                {
+                    case LOW:
+                        myPriorityCombo.setSelectedItem("Low");
+                        break;
+                    case MEDIUM:
+                        myPriorityCombo.setSelectedItem("Medium");
+                        break;
+                    case HIGH:
+                        myPriorityCombo.setSelectedItem("High");
+                        break;
+                    case URGENT:
+                        myPriorityCombo.setSelectedItem("Urgent");
+                        break;
+                    case IMMEDIATE:
+                        myPriorityCombo.setSelectedItem("Immediate");
+                        break;
+                }
             }
 
             BMObjectsType bmObjects = myObject.getBmObjects();

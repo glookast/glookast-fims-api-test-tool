@@ -103,7 +103,9 @@ public class BMEssenceLocatorDialog extends ViewEditDialog<BMEssenceLocatorType>
         if (myObject instanceof SimpleFileLocatorType) {
             myFileField.setText(((SimpleFileLocatorType)myObject).getFile());
         } else if (myObject instanceof ListFileLocatorType) {
-
+            myFileField.setText("Check output at console.");
+            ((ListFileLocatorType)myObject).getFile().forEach(System.out::println);
+            System.out.println("Dialog coming soon!");
         } else if (myObject instanceof FolderLocatorType) {
             myFileField.setText(((FolderLocatorType) myObject).getFolder());
         }

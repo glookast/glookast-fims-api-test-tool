@@ -143,19 +143,25 @@ public class StringUtils
 
         if (bmEssenceLocators != null) {
             for (BMEssenceLocatorType bmEssenceLocator : bmEssenceLocators.getBmEssenceLocator()) {
-                if (bmEssenceLocator instanceof SimpleFileLocatorType) {
-                    return ((SimpleFileLocatorType) bmEssenceLocator).getFile();
-                }
-                if (bmEssenceLocator instanceof ListFileLocatorType) {
-                    StringBuilder sb = new StringBuilder();
-                    for (String file : ((ListFileLocatorType)bmEssenceLocator).getFile()) {
-                        sb.append(file).append("; ");
-                    }
-                    return sb.toString();
-                }
+                return toString(bmEssenceLocator);
             }
         }
 
+        return "";
+    }
+
+    public static String toString(BMEssenceLocatorType bmEssenceLocator)
+    {
+        if (bmEssenceLocator instanceof SimpleFileLocatorType) {
+            return ((SimpleFileLocatorType) bmEssenceLocator).getFile();
+        }
+        if (bmEssenceLocator instanceof ListFileLocatorType) {
+            StringBuilder sb = new StringBuilder();
+            for (String file : ((ListFileLocatorType)bmEssenceLocator).getFile()) {
+                sb.append(file).append("; ");
+            }
+            return sb.toString();
+        }
         return "";
     }
 

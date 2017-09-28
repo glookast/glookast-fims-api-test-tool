@@ -4,6 +4,7 @@ import com.glookast.fimsclient.app.AppController;
 import com.glookast.fimsclient.app.gui.components.ScrollTableModel;
 import com.glookast.fimsclient.app.gui.components.TablePanel;
 import com.glookast.fimsclient.app.gui.components.ViewEditDialog;
+import com.glookast.fimsclient.app.utils.StringUtils;
 import com.glookast.fimsclient.app.utils.XmlUtils;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -120,10 +121,8 @@ public class BMContentFormatDialog extends ViewEditDialog<BMContentFormatType>
             BMEssenceLocatorType bmEssenceLocator = myBmEssenceLocators.get(rowIndex);
             switch (columnIndex) {
                 case 0:
-                    if (bmEssenceLocator instanceof SimpleFileLocatorType) {
-                        return ((SimpleFileLocatorType)bmEssenceLocator).getFile();
-                    }
-                    return "";
+                    return StringUtils.toString(bmEssenceLocator);
+
             }
             throw new IndexOutOfBoundsException();
         }
